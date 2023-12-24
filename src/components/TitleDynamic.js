@@ -5,7 +5,6 @@ class titleDynamic extends HTMLElement {
         const shadow = this.attachShadow({ mode: 'open' })
 
         shadow.appendChild(this.build())
-        shadow.appendChild(this.styles())
     }
 
     build(){
@@ -17,12 +16,6 @@ class titleDynamic extends HTMLElement {
         componentRoot.appendChild(title);
 
         return componentRoot;
-    }
-
-
-
-    styles(){
-
     }
 }
 

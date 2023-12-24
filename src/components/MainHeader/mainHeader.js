@@ -2,8 +2,9 @@ class mainHeader extends HTMLElement{
     constructor(){
         super()
 
-        let shadow = this.attachShadow({mode: 'open'})
+        const shadow = this.attachShadow({mode: 'open'})
 
+        shadow.appendChild(this.styles())
         shadow.appendChild(this.build())
     }
 
@@ -32,6 +33,19 @@ class mainHeader extends HTMLElement{
         componentRoot.appendChild(pagesWrapper);
 
         return componentRoot;
+    }
+
+    styles(){
+        const head = document.createElement('head');
+        const style = document.createElement('link');
+
+        style.href = './src/components/MainHeader/mainHeader.css';
+        style.type = 'text/css';
+        style.rel = 'stylesheet';
+
+        head.appendChild(style)
+        
+        return head;
     }
 }
 
