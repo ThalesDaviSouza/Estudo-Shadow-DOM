@@ -10,9 +10,31 @@
     <script src="./src/components/TitleDynamic.js" defer></script>
 </head>
 <body>
-    <main-header></main-header>
+    <main-header 
+        id="main-header" 
+        main-text="Studies about Shadow DOM" 
+    >
+    </main-header>
     <title-dynamic title="Title 1"></title-dynamic>
-    <title-dynamic title="Title 2"></title-dynamic>
-    <title-dynamic title="Title 3"></title-dynamic>
 </body>
+
+<script>
+    const pages = []
+
+    pages.push({
+        name: 'page1',
+        url: './index.html'
+    })
+    pages.push({
+        name: 'page2',
+        url: './index.html'
+    })
+    pages.push({
+        name: 'page3',
+        url: './index.html'
+    })
+    
+    document.getElementById('main-header').setAttribute('pages', JSON.stringify(pages))
+
+</script>
 </html>
